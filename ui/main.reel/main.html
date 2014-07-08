@@ -13,46 +13,23 @@
                 "element": {"#": "main"}
             }
         },
-        "list": {
-            "prototype": "digit/ui/list.reel",
-            "properties": {
-                "element": {"#": "list"}
-            }
-        },
-        "repetition": {
+        "bottomPanel": {
             "prototype": "montage/ui/repetition.reel",
             "properties": {
-                "element": {"#": "repetition"}
+                "element": {"#": "bottomPanel"}
             }
         },
-        "repetition2": {
+        "contentPanel": {
             "prototype": "montage/ui/repetition.reel",
             "properties": {
-                "element": {"#": "repetition2"}
+                "element": {"#": "contentPanel"}
             }
         },
-        "repetition3": {
+        "topPanel": {
             "prototype": "montage/ui/repetition.reel",
             "properties": {
-                "element": {"#": "repetition3"}
-            }
-        },
-        "substitution": {
-            "prototype": "montage/ui/substitution.reel",
-            "properties": {
-                "element": {"#": "substitution"}
-            }
-        },
-        "substitution2": {
-            "prototype": "montage/ui/substitution.reel",
-            "properties": {
-                "element": {"#": "substitution2"}
-            }
-        },
-        "substitution3": {
-            "prototype": "montage/ui/substitution.reel",
-            "properties": {
-                "element": {"#": "substitution3"}
+                "element": {"#": "topPanel"},
+                "content": []
             }
         }
     }
@@ -61,18 +38,17 @@
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
         <ul data-montage-id="repetition">
+
+        </ul>
+        <ul data-montage-id="topPanel">
             <li></li>
         </ul>
-        <ul data-montage-id="repetition2">
-            <ul data-montage-id="list">
-                <li></li>
-            </ul>
+        <ul data-montage-id="contentPanel">
+            <li></li>
+            <li></li>
             <li></li>
         </ul>
-        <div data-montage-id="substitution"></div>
-        <div data-montage-id="substitution2"></div>
-        <div data-montage-id="substitution3"></div>
-        <ul data-montage-id="repetition3">
+        <ul data-montage-id="bottomPanel">
             <li></li>
         </ul>
     </div>
