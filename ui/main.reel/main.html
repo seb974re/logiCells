@@ -25,6 +25,12 @@
                 "element": {"#": "contentPanel"}
             }
         },
+        "substitution": {
+            "prototype": "montage/ui/substitution.reel",
+            "properties": {
+                "element": {"#": "substitution"}
+            }
+        },
         "topPanel": {
             "prototype": "montage/ui/repetition.reel",
             "properties": {
@@ -44,7 +50,9 @@
             <li></li>
         </ul>
         <ul data-montage-id="contentPanel">
-            <li></li>
+            <li>
+                <div data-montage-id="substitution"></div>
+            </li>
             <li></li>
             <li></li>
         </ul>
