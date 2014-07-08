@@ -10,59 +10,64 @@
     {
         "owner": {
             "properties": {
-                "element": {"#": "main"}
+                "element": {"#": "owner"},
+                "identifier": ""
             }
         },
-        "bottomPanel": {
-            "prototype": "montage/ui/repetition.reel",
+        "actionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
             "properties": {
-                "element": {"#": "bottomPanel"}
+                "action": "addContent",
+                "handler": {"@": "rangeController"}
+            },
+            "_dev": {
+                "isHidden": true
             }
         },
-        "contentPanel": {
-            "prototype": "montage/ui/repetition.reel",
+        "button": {
+            "prototype": "digit/ui/button.reel",
             "properties": {
-                "element": {"#": "contentPanel"}
+                "element": {"#": "button"},
+                "enabled": true,
+                "label": "New task"
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "actionEventListener"}
+                }
+            ]
+        },
+        "list": {
+            "prototype": "digit/ui/list.reel",
+            "properties": {
+                "element": {"#": "list"},
+                "contentController": {"@": "rangeController"}
             }
         },
-        "contentSubPanel": {
-            "prototype": "montage/ui/substitution.reel",
-            "properties": {
-                "element": {"#": "contentSubPanel"}
-            }
+        "rangeController": {
+            "prototype": "montage/core/range-controller"
         },
-        "textArea": {
-            "prototype": "digit/ui/text-area.reel",
+        "title": {
+            "prototype": "digit/ui/title.reel",
             "properties": {
-                "element": {"#": "textArea"},
-                "value": "Text"
-            }
-        },
-        "topPanel": {
-            "prototype": "montage/ui/repetition.reel",
-            "properties": {
-                "element": {"#": "topPanel"},
-                "content": []
+                "element": {"#": "title"},
+                "value": "Todo list"
             }
         }
     }
     </script>
 </head>
 <body>
-    <div data-montage-id="main" data-montage-skin="light" class="Main">
-        <ul data-montage-id="topPanel">
+    <div data-montage-id="owner" class="Task">
+        <h1 data-montage-id="title">
+
+        </h1>
+        <button data-montage-id="button"></button>
+        <ul data-montage-id="list">
             <li></li>
         </ul>
-        <ul data-montage-id="contentPanel">
-            <li>
-                <div data-montage-id="contentSubPanel">
-                    <textarea data-montage-id="textArea"></textarea>
-                </div>
-            </li>
-        </ul>
     </div>
-    <ul data-montage-id="bottomPanel">
-        <li></li>
-    </ul>
 </body>
 </html>
